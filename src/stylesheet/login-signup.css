@@ -1,0 +1,172 @@
+body{
+  /* background-image: url("https://img.freepik.com/free-photo/flat-lay-desktop-with-laptop-cup-coffee_23-2148430890.jpg?w=1380&t=st=1723198038~exp=1723198638~hmac=92ae1d81333a41dd08ccc9b4f7343bc28e5048ffb8c45b4a1dd4af2ca0bbbd73"); */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+
+.login-signup{
+    position: relative;
+    display: flex;
+    border: rgb(41, 41, 41) solid;
+    width: 70dvh;
+    height: 50dvh;
+    border-radius: 30px;
+    background: rgb(39, 39, 39);
+    color: white;
+  }
+  .login a{
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .slider{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(96, 62, 43);
+    width: 35dvh;
+    height: 100%;
+    border-radius: 30px;
+    left: 0;
+    transition: 0.5s;
+  }
+  #sliderani1{
+    /* display: none; */
+    animation: slider 2s  ;   
+         animation-fill-mode: forwards;
+
+  }
+  @keyframes slider {
+    0%{
+      left: 0%;
+
+    }
+    100%{
+      left: 50%;
+
+    }
+  }
+  #sliderani2{
+    /* display: none; */
+    animation: slider2 2s  ;
+  }
+  @keyframes slider2 {
+    0%{
+      left: 50%;
+      animation-play-state: running;
+    }
+    100%{
+      left: 0%;
+      animation-play-state: paused;
+
+    }
+  }
+
+  .slider .slider-name{
+    color: white;
+  }
+  .slider button{
+    border: none;
+    padding: 10px;
+    scale: 1.2;
+    border-radius:30px ;
+    transition: 0.5s;
+  }
+  .login, .signup{
+    /* border: black solid; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 35dvh;
+    border-radius: 30px;
+    height: 100%;
+    /* border: black solid; */
+  }
+  .login button, .signup button{
+    border-radius: 10px;
+    /* margin-top: 20px; */
+    width: fit-content;
+    margin:20px auto;
+    width: 50px;
+    height: 30px;
+  }
+  .login input , .signup input{
+    border-radius: 5px;
+    height: 20px;
+    outline: none;
+  }
+.login-1, .signup-1{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  @media  screen and (max-width: 800px) {
+    .login-signup{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: rgb(41, 41, 41) solid;
+      width: auto;
+      height: fit-content;
+      border-radius: 30px;
+      background: rgb(39, 39, 39);
+      color: white;
+    }
+
+    .login, .signup{
+      /* border: black solid; */
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      width: 35dvh;
+      border-radius: 30px;
+      height: 40dvh;
+      /* border: black solid; */
+    }
+
+    .slider{
+      width: 35dvh;
+      height: 40dvh;
+    }
+    #sliderani1{
+      /* display: none; */
+      animation: slider 2s  ;   
+           animation-fill-mode: forwards;
+  
+    }
+    @keyframes slider {
+      0%{
+        /* left: 0%; */
+        top: 0;
+      }
+      100%{
+        /* left: 50%; */
+        top: 40dvh;
+      }
+    }
+    #sliderani2{
+      /* display: none; */
+      animation: slider2 2s  ;
+    }
+    @keyframes slider2 {
+      0%{
+        top: 40dvh;
+        /* left: 50%; */
+        animation-play-state: running;
+      }
+      100%{
+        top: 0;
+        left: 0%;
+        animation-play-state: paused;
+  
+      }
+    }
+  }
