@@ -6,7 +6,12 @@ body{
     justify-content: center;
     height: 100dvh;
 }
-
+.login-signup-again{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50dvh;
+}
 .login-signup{
     position: relative;
     display: flex;
@@ -104,69 +109,99 @@ body{
 .login-1, .signup-1{
     display: flex;
     flex-direction: column;
-
   }
-
+.flip-login-signup{
+  display: none;
+}
+.flip-card{
+  display: none;
+}
   @media  screen and (max-width: 800px) {
+    
     .login-signup{
+      display: none;
+    }
+    .maincontainer{
       position: relative;
+      width: 30dvh;
+      height: 50dvh;
+      background-color: none;
+  }
+  .switcher{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    background-color: rgb(96, 62, 43);
+    color: white;
+  }
+  .switcher button{
+    border-radius: 20px;
+    height: fit-content;
+    width: fit-content;
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+  }
+  .thecard{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: yellow;
+      transform-style:preserve-3d ;
+      transition: all 0.5s ease;
+  }
+  #flipCard{
+      transform: rotateY(180deg);
+  }
+ 
+    .login-1{
       display: flex;
       flex-direction: column;
-      border: rgb(41, 41, 41) solid;
-      width: auto;
-      height: fit-content;
-      border-radius: 30px;
-      background: rgb(39, 39, 39);
-      color: white;
-    }
-
-    .login, .signup{
-      /* border: black solid; */
       align-items: center;
       justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      /* border: black solid; */
+      background: rgb(39, 39, 39);
+    }
+    .login-1-1, .signup-1-1{
       display: flex;
       flex-direction: column;
-      width: 35dvh;
-      border-radius: 30px;
-      height: 40dvh;
-      /* border: black solid; */
+      color: white;
     }
+    .login-1-1 a{
+      text-decoration: none;
+      color: white;
+  }
+  .login-1-1 input, .signup-1-1 input{
+    border-radius: 10px;
+    color: black;
+    padding: 5px;
+  }
+  .login-1-1 input::placeholder, .signup-1-1 input::placeholder{
+    color: black;
+  }
 
-    .slider{
-      width: 35dvh;
-      height: 40dvh;
-    }
-    #sliderani1{
-      /* display: none; */
-      animation: slider 2s  ;   
-           animation-fill-mode: forwards;
-  
-    }
-    @keyframes slider {
-      0%{
-        /* left: 0%; */
-        top: 0;
-      }
-      100%{
-        /* left: 50%; */
-        top: 40dvh;
-      }
-    }
-    #sliderani2{
-      /* display: none; */
-      animation: slider2 2s  ;
-    }
-    @keyframes slider2 {
-      0%{
-        top: 40dvh;
-        /* left: 50%; */
-        animation-play-state: running;
-      }
-      100%{
-        top: 0;
-        left: 0%;
-        animation-play-state: paused;
-  
-      }
+  .login-1-1 button,  .signup-1-1 button{
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px 10px;
+    margin: auto;
+    margin-top: 20px;
+  }
+    .signup-1{
+      background: rgb(39, 39, 39);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
     }
   }
