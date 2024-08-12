@@ -31,14 +31,13 @@ const Login = () => {
     const flipCardMst = (e) => {
         e.preventDefault()
         // setId2('flipCard')
-        if (loginSignUp == "sign up") {
-            setLoginSignup('login')
+        if (loginSignUp2 == "sign up") {
+            setLoginSignup2('login')
             setId("sliderani1")
             setId2('flipCard')
         }
         else {
-            setLoginSignup('sign up')
-            setId("sliderani2")
+            setLoginSignup2('sign up')
             setId2('flipCard2')
         }
         
@@ -86,34 +85,40 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="maincontainer">
-                <div className='switcher' >
-                        <h2 className='slider-name'>{loginSignUp2}</h2>
-                        <button onClick={flipCardMst} className='slider-btn'>{loginSignUp2}</button>
-                    </div>
+                
                 <div className="thecard" id={id2}>
-                    <div className="login-1">
+                
+                    <div className="mobile-login-1">
+                    <div className='switcher' >
+                        <h2 className='slider-name'>login</h2>
+                        <button onClick={flipCardMst} className='slider-btn'>login</button>
+                    </div>
                         <div className='login-1-1'>
                             <label htmlFor="">username</label>
-                            <input type="text" placeholder="username" />
+                            <input type="text" placeholder="enter username" />
                             <br />
                             <label>Password</label>
-                            <input type="text" placeholder="password" />
+                            <input type="text" placeholder="enter password" />
                             <a href="">forgot password</a>
                             <button>login</button>
                         </div>
                     </div>
-                    <div className="signup-1">
+                    <div className="mobile-signup-1">
+                    <div className='switcher'>
+                        <h2 className='slider-name'>signup</h2>
+                        <button onClick={flipCardMst} className='slider-btn'>signup</button>
+                    </div>
                     <div className='signup-1-1'>
                                 <label htmlFor="">username</label>
-                                <input type="text" placeholder="username" />
+                                <input type="text" placeholder="enter username" />
                                 {/* <label htmlFor="">fullname</label>
                             <input type="text" placeholder='full name' /> */}
                                 <br />
                                 <label htmlFor="">email</label>
-                                <input type="email" placeholder='email' />
+                                <input type="email" placeholder='enter email' />
                                 <br />
                                 <label>Password</label>
-                                <input type="passwoord" placeholder="password" />
+                                <input type="passwoord" placeholder="enter password" />
                                 <button>create</button>
                             </div>
                     </div>
