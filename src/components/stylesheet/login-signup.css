@@ -1,45 +1,89 @@
 body{
   /* background-image: url("https://c0.wallpaperflare.com/preview/912/739/608/black-coffee-break-break-time-brewed-coffee.jpg"); */
     margin: 0;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
+    height: 100dvh; */
+}
+*{
+  transition: all 0.2s ease-in-out;
+}
+:root{
+  --first-color:white;
+  --second-color:#00A6FF;
+  --third-color:black;
+  --forth-color:rgb(196, 196, 196);
+  --fifth-color:rgb(66, 66, 66);
+  --sisth-color:rgb(96, 62, 43);
+
+}
+[data-theme="dark"]{
+  --first-color:rgb(39, 39, 39);
+  --second-color:rgb(96, 62, 43);
+  --third-color:rgb(255, 255, 255);
+  --forth-color:rgb(66, 66, 66);
+  --fifth-color:rgb(196, 196, 196);
+  --sisth-color:#00A6FF;
+
 }
 .maincontainer{
   display: none;
 }
-.login-signup-again{
+.desktop-login-signup{
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  background-color: var(--first-color);
+}
+.side-bar{
+  color: white;
+  width: 30%;
+  height: 100%;
+  background: var(--second-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.side-bar h1{
+  font-size: 70px;
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+form{
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 70%;
+  /* height: 100dvh; */
+
+}
+.login-signup-again{
   height: 50dvh;
-  
 }
 .login-signup{
     position: relative;
     display: flex;
-    border: rgb(41, 41, 41) solid;
+    /* border: rgb(41, 41, 41) solid; */
     width: 70dvh;
     height: 50dvh;
     border-radius: 30px;
-    background: rgb(39, 39, 39);
+    background: var(--forth-color);
     color: white;
-    box-shadow: 0px 20px 20px gray;
+    box-shadow: 0px 10px 20px rgb(97, 97, 97);
 
   }
-  .login a{
-    color: white;
-    text-decoration: none;
-    font-size: 10px;
-  }
+  
   .slider{
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(96, 62, 43);
+    background-color: var(--second-color);
     width: 35dvh;
     height: 100%;
     border-radius: 30px;
@@ -83,10 +127,11 @@ body{
   }
   .slider button{
     border: none;
-    padding: 10px;
+    padding:5px 10px;
     scale: 1.2;
     border-radius:30px ;
     transition: 0.5s;
+    width: 10dvh;
   }
   .login, .signup{
     /* border: black solid; */
@@ -106,21 +151,42 @@ body{
     margin:20px auto;
     width: 50px;
     height: 30px;
+    border: none;
+    background: rgb(54, 54, 54);
+    color: white;
   }
   .login input , .signup input{
     border-radius: 5px;
     height: 20px;
     outline: none;
+    border: none;
   }
 .login-1, .signup-1{
     display: flex;
     flex-direction: column;
+    color: var(--third-color);
   }
+.login-1 a{
+  margin-top: 10px;
+  color: var(--third-color);
+    text-decoration: none;
+    font-size: 10px;
+}
+
 
   @media  screen and (max-width: 800px) {
     
     .login-signup{
       display: none;
+    }
+    .desktop-login-signup{
+      display: none;
+    }
+    
+    form{
+      width: 100%;
+      height: 100dvh;
+      background: var(--first-color);
     }
     .maincontainer{
       display: block;
@@ -135,7 +201,7 @@ body{
     justify-content: space-around;
     align-items: center;
     border-radius: 20px 20px 20px 20px;
-    background-color: rgb(96, 62, 43);
+    background-color: var(--second-color);
     color: white;
     position: absolute;
     top: 0;
@@ -149,7 +215,6 @@ body{
     /* border: black solid; */
   }
   .switcher button{
-    
     border-radius: 20px;
     height: fit-content;
     width: fit-content;
@@ -161,12 +226,11 @@ body{
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: yellow;
+      background-color: none;
       transform-style:preserve-3d ;
-      transition: all 1s ease;
+      transition: 1s ease-in-out;
       border-radius: 20px 20px 20px 20px;
-      box-shadow: 0px 20px 20px gray;
-
+      box-shadow: 0px 5px 20px rgb(96, 96, 96);
   }
   #flipCard{
       transform: rotateY(180deg);
@@ -182,22 +246,23 @@ body{
       height: 100%;
       backface-visibility: hidden;
       /* border: black solid; */
-      background: rgb(39, 39, 39);
+      background: var(--forth-color);
       border-radius: 20px 20px 20px 20px;
 
     }
     .login-1-1, .signup-1-1{
       display: flex;
       flex-direction: column;
-      color: white;
       width: 80%;
+      color:var(--third-color);
+      /* color: white; */
     }
     .signup-1-1{
       margin-top: 15%;
     }
     .login-1-1 a{
       text-decoration: none;
-      color: white;
+      color: var(--third-color);
       font-size: 13px;
       margin-top: 10px;
   }
@@ -223,7 +288,7 @@ body{
     border: none;
   }
     .mobile-signup-1{
-      background: rgb(39, 39, 39);
+      background: var(--forth-color);
       display: flex;
       flex-direction: column;
       align-items: center;
