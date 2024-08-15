@@ -1,0 +1,33 @@
+.navbar{
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    background-color: gray;
+    align-items: center;
+    justify-content: space-between;
+    height: 10dvh;
+    background: transparent;
+    backdrop-filter: blur(50px);
+}
+.logodiv{
+    margin-left: 10%;
+}
+.search_bar{
+    margin-right: 10%;
+    background-color: white;
+    height: 50%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    /* background: transparent; */
+}
+input{
+    /* border: black solid; */
+    border: none;
+    outline: none;
+    color: black;
+    border-radius: 20px;
+}

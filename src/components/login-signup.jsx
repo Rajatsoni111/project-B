@@ -19,13 +19,15 @@ const Login = () => {
         e.preventDefault()
 
         // slidBtn.styles.display = "flex"
-        if (loginSignUp == "login") {
+        if (loginSignUp == "login" || loginSignUp2 == "sign up") {
             setLoginSignup('sign up')
+            setLoginSignup2("login")
             setId("sliderani1")
 
         }
         else {
             setLoginSignup('login')
+            setLoginSignup2("sign up")
             setId("sliderani2")
 
         }
@@ -59,33 +61,33 @@ const Login = () => {
                 <form action="" >
                     <div className="login-signup">
                         <div className='slider' id={id}>
-                            <h2 className='slider-name'>{loginSignUp}</h2>
+                            <h2 className='slider-name'>{loginSignUp2}</h2>
                             <button onClick={handleClick} className='slider-btn'>{loginSignUp}</button>
                         </div>
                         <div className="login">
                             <div className='login-1'>
-                                <label htmlFor="">username</label>
-                                <input type="text" placeholder="username" />
+                                <label htmlFor="">USERNAME</label>
+                                <input type="text" placeholder="enter username" />
                                 <br />
-                                <label>Password</label>
-                                <input type="text" placeholder="password" />
+                                <label>PASSWORD</label>
+                                <input type="text" placeholder="enter password" />
                                 <a href="">forgot password</a>
                                 <button>login</button>
                             </div>
                         </div>
                         <div className="signup">
                             <div className='signup-1'>
-                                <label htmlFor="">username</label>
-                                <input type="text" placeholder="username" />
+                                <label htmlFor="">USERNAME</label>
+                                <input type="text" placeholder="enter username" />
                                 {/* <label htmlFor="">fullname</label>
                             <input type="text" placeholder='full name' /> */}
                                 <br />
-                                <label htmlFor="">email</label>
-                                <input type="email" placeholder='email' />
+                                <label htmlFor="">EMAIL</label>
+                                <input type="email" placeholder='enter email' />
                                 <br />
-                                <label>Password</label>
-                                <input type="passwoord" placeholder="password" />
-                                <button>create</button>
+                                <label>PASSWORD</label>
+                                <input type="passwoord" placeholder="enter password" />
+                                <button onClick="window.location.href='./profile.jsx'">create</button>
                             </div>
                         </div>
                     </div>
