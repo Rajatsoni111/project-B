@@ -58,85 +58,105 @@ const Login = () => {
                     <h1>create</h1>
                     <h2> a blog for some people</h2>
                 </div>
-                <form action="" >
+                <form action="" className='form'>
                     <div className="login-signup">
                         <div className='slider' id={id}>
                             <h2 className='slider-name'>{loginSignUp2}</h2>
                             <button onClick={handleClick} className='slider-btn'>{loginSignUp}</button>
                         </div>
-                        <div className="login">
-                            <div className='login-1'>
-                                <label htmlFor="">USERNAME</label>
-                                <input type="text" placeholder="enter username" />
-                                <br />
-                                <label>PASSWORD</label>
-                                <input type="text" placeholder="enter password" />
-                                <a href="">forgot password</a>
-                                <button>login</button>
-                            </div>
-                        </div>
-                        <div className="signup">
-                            <div className='signup-1'>
-                                <label htmlFor="">USERNAME</label>
-                                <input type="text" placeholder="enter username" />
-                                {/* <label htmlFor="">fullname</label>
+                        {/* <div className="login"> */}
+                            {/* <form action="/login" method='post'> */}
+                            {/* <div className="login-signup"> */}
+                                {/* <div className='slider' id={id}>
+                                    <h2 className='slider-name'>{loginSignUp}</h2>
+                                    <button onClick={handleClick} className='slider-btn'>{loginSignUp}</button>
+                                </div> */}
+                                {/* login form */}
+                                <div className="login">
+                                    <form action="/login" method="post">
+                                        <div className='login-1'>
+                                            <label htmlFor="">USERNAME</label>
+                                            <input type="text" placeholder="enter username" />
+                                            <br />
+                                            <label>PASSWORD</label>
+                                            <input type="password" placeholder="enter password" />
+                                            <a href="">forgot password</a>
+                                            <button>login</button>
+                                        </div >
+                                    </form >
+                                </div >
+                                {/* signup form  */}
+                                < div className="signup" >
+                                    <form action="/create" method="post">
+                                        <div className='signup-1'>
+                                            <label htmlFor="">username</label>
+                                            <input type="text" placeholder="username" name='username' />
+                                            {/* <label htmlFor="">fullname</label>
                             <input type="text" placeholder='full name' /> */}
-                                <br />
-                                <label htmlFor="">EMAIL</label>
-                                <input type="email" placeholder='enter email' />
-                                <br />
-                                <label>PASSWORD</label>
-                                <input type="passwoord" placeholder="enter password" />
-                                <button onClick="window.location.href='./profile.jsx'">create</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <form action="" data-theme={isDark ? "dark" : "light"}>
-            <ToggleButton isChecked={isDark} handleChange={()=> setIsDark(!isDark)}/>
+                                            <br />
+                                            <label htmlFor="">email</label>
+                                            <input type="email" placeholder='email' name='email' />
+                                            <br />
+                                            <label>Password</label>
+                                            <input type="password" placeholder="password" name='password' />
+                                            <button type='submit'>create</button>
+                                        </div >
+                                    </form >
+                                </div >
+                            {/* </div > */}
+                            {/* </form> */}
+                        </div >
+                        {/* </div> */}
+                        </form>
+                        <form action="" data-theme={isDark ? "dark" : "light"}>
+                            <ToggleButton isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
 
-                <div className="maincontainer">
-                    <div className="thecard" id={id2}>
-                        <div className="mobile-login-1">
-                            <div className='switcher' >
-                                <h2 className='slider-name'>login</h2>
-                                <button onClick={flipCardMst} className='slider-btn'>signup</button>
-                            </div>
-                            <div className='login-1-1'>
-                                <label htmlFor="">username</label>
-                                <input type="text" placeholder="enter username" />
-                                <br />
-                                <label>Password</label>
-                                <input type="text" placeholder="enter password" />
-                                <a href="">forgot password</a>
-                                <button>login</button>
-                            </div>
-                        </div>
-                        <div className="mobile-signup-1">
-                            <div className='switcher'>
-                                <h2 className='slider-name'>signup</h2>
-                                <button onClick={flipCardMst} className='slider-btn'>login</button>
-                            </div>
-                            <div className='signup-1-1'>
-                                <label htmlFor="">username</label>
-                                <input type="text" placeholder="enter username" />
-                                {/* <label htmlFor="">fullname</label>
+                            <div className="maincontainer">
+                                <div className="thecard" id={id2}>
+                                    <div className="mobile-login-1">
+                                        <div className='switcher' >
+                                            <h2 className='slider-name'>login</h2>
+                                            <button onClick={flipCardMst} className='slider-btn'>signup</button>
+                                        </div>
+                                        <div className='login-1-1'>
+                                            <form action="/login" method="post">
+                                                <label htmlFor="">username</label>
+                                                <input type="text" placeholder="enter username" />
+                                                <br />
+                                                <label>Password</label>
+                                                <input type="password" placeholder="enter password" />
+                                                <a href="">forgot password</a>
+                                                <button>login</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div className="mobile-signup-1">
+                                        <div className='switcher'>
+                                            <h2 className='slider-name'>signup</h2>
+                                            <button onClick={flipCardMst} className='slider-btn'>login</button>
+                                        </div>
+                                        <div className='signup-1-1'>
+                                            <form action="/create" method="post">
+                                                <label htmlFor="">username</label>
+                                                <input type="text" placeholder="enter username" name='username' />
+                                                {/* <label htmlFor="">fullname</label>
                             <input type="text" placeholder='full name' /> */}
-                                <br />
-                                <label htmlFor="">email</label>
-                                <input type="email" placeholder='enter email' />
-                                <br />
-                                <label>Password</label>
-                                <input type="passwoord" placeholder="enter password" />
-                                <button>create</button>
+                                                <br />
+                                                <label htmlFor="">email</label>
+                                                <input type="email" placeholder='enter email' name='email' />
+                                                <br />
+                                                <label>Password</label>
+                                                <input type="password" placeholder="enter password" name='password' />
+                                                <button>create</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </div>
-            </form>
-        </>
-    )
+                </>
+                )
 }
 
-export default Login
+                export default Login

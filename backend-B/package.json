@@ -1,0 +1,32 @@
+{
+  "name": "project-b",
+  "version": "1.0.0",
+  "description": "Project-B is a blog website which provides you the features for writing your own blog and also reading someone else's blogs liking them, saving them in your saved section and much more... ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajatsoni111/project-B.git"
+  },
+  "keywords": [
+    "blog",
+    "mern",
+    "blog-website",
+    "mern-website"
+  ],
+  "author": "Rajat Soni and Rajesh Soni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajatsoni111/project-B/issues"
+  },
+  "homepage": "https://github.com/Rajatsoni111/project-B#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3"
+  }
+}

@@ -2,6 +2,7 @@ import NavBar from "./navBar"
 import "./stylesheet/mainpage.css"
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
+import Sidebar from "./Sidebar";
 
 const MainPage = () => {
     return (
@@ -14,7 +15,8 @@ const MainPage = () => {
                 </div>
                 <NavBar></NavBar>
                 <div className="maindiv">
-                    <div className="sidebar"></div>
+                    {<Sidebar/>}
+                    {/* <div className="sidebar"></div> */}
                     <div className="postdiv">
                         <div className="post">
                             <div className="post-function">

@@ -1,14 +1,26 @@
+:root{
+  --color-color:white;
+}
+[data-theme="dark"]{
+  --color-color:black;
+  
+}
+body{
+  background-color: var(--color-color);
+}
 .toggle-container {
-  position: absolute;
+  /* position: relative; */
   top: 2em;
   left: 2em;
 }
 
 .toggle {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
-.toggle + label {
+.toggle+label {
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 1.5em;
@@ -16,27 +28,29 @@
   color: var(--primary-text-color);
 }
 
-.toggle + label::before {
+.toggle+label::before {
   content: "";
-  height: 1em;
-  width: 2em;
+  height: .6em;
+  width: 1.3em;
   border-radius: 1em;
   background-color: var(--forth-color);
   margin-right: 0.5em;
   transition: background-color 250ms ease-in-out;
 }
 
-.toggle + label::after {
+.toggle+label::after {
   content: "";
-  height: 0.8em;
-  width: 0.8em;
+  height: 0.5em;
+  width: 0.5em;
   border-radius: 1em;
   background-color: var(--sisth-color);
   position: absolute;
   left: 0.2em;
+  /* left: 1em; */
+  /* left: var(--toggle-margin); */
   transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
 }
 
-.toggle:checked + label::after {
+.toggle:checked+label::after {
   transform: translateX(100%);
 }

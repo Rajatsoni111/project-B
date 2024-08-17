@@ -1,3 +1,18 @@
+:root{
+--navbar-background-color:rgba(217, 217, 217, 0.46);
+--navbar--textcolor:black;
+--navbar-input-background-color:#FFFFFF;
+--navbar-icon-color:black;
+}
+[data-theme="dark"]{
+    --navbar-background-color:rgba(39, 38, 38, 0.46);
+    --navbar--textcolor:black;
+    --navbar-input-background-color:rgba(21, 19, 19, 1);
+    --navbar-icon-color:black;
+    }
+    
+
+
 .navbar{
     position: absolute;
     display: flex;
@@ -8,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     height: 10dvh;
-    background: transparent;
+    background: var(--navbar-background-color);
     backdrop-filter: blur(50px);
 }
 .logodiv{
@@ -16,9 +31,9 @@
 }
 .search_bar{
     margin-right: 10%;
-    background-color: white;
+    background-color: var(--navbar-input-background-color);
     height: 50%;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 0px 10px;
@@ -29,5 +44,5 @@ input{
     border: none;
     outline: none;
     color: black;
-    border-radius: 20px;
+    border-radius: 10px;
 }
