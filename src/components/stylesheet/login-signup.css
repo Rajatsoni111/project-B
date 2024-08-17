@@ -16,7 +16,8 @@ body{
   --forth-color:rgb(196, 196, 196);
   --fifth-color:rgb(66, 66, 66);
   --sisth-color:rgb(96, 62, 43);
-
+  --toggle-margin: 7.2em;
+  
 }
 [data-theme="dark"]{
   --first-color:rgb(39, 39, 39);
