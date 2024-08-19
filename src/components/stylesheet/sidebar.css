@@ -52,6 +52,7 @@ body {
     }
 
     .buttons {
+        overflow: hidden;
         .sidebar-buttons {
             padding: 10px 20px;
             margin: 10px 0;
@@ -72,9 +73,13 @@ body {
                 cursor: pointer;
             }
         }
+        .sidebar-buttons:hover{
+            background-color: rgba(175, 173, 173, 0.744);
+            transform: scale(1.1);
+        }
     }
     #theme{
-        border: black solid;
+        /* border: black solid; */
         display: flex;
     }
 }

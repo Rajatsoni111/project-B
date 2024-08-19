@@ -75,11 +75,12 @@ body{
 .postdiv{
     width: 60%;
     height: 100%;
-    border:black solid;
+    /* border:black solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
     background: var(--postdiv-background);
+    overflow: scroll;
 }
 .post{
     margin-top: 20px;
@@ -87,6 +88,9 @@ body{
     height: 50%;
     background-color: rgb(106, 106, 106,0.5);
     display: flex;
+}
+.post:hover{
+    transform: scale(1.02);
 }
 .post-function{
     width: 40%;
@@ -129,7 +133,6 @@ body{
     height: auto;
     max-height: 50%;
     overflow: scroll;
-    border: red solid;
 }
 .post-function-caption p{
     margin: 10px;
@@ -137,10 +140,147 @@ body{
 .post-image{
     width: 60%;
     height: 100%;
+    overflow: hidden;
+    /* background: cover; */
+    position: relative;
 }
 .post-image img{
     width: 100%;
     height: 100%;
     aspect-ratio: 3/2;
     object-fit: contain;
+    position: relative;
+}
+.post-image::before{
+    content: "see full post";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: rgba(196, 195, 195, 0.434);
+    z-index: 999;
+    transform: scaleX(0 );
+}
+.past-image::before:hover{
+    transform: scaleX(1);
+
+}
+.post-image img:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+.like-comment-save{
+    padding-left: 10px;
+    margin-top: 5%;
+    display: flex;
+    gap: 30px;
+}
+ .icon{
+    position: relative;
+}
+
+.comment, .like, .save{
+    /* margin-left: 10px; */
+    display: flex;
+    min-width: 30px;
+    max-width: fit-content;
+    align-items: center;
+    gap: 10px;
+}
+
+.full-post-div{
+    width: 100%;
+    height: 90dvh;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px);
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.full-post{
+    width: 70%;
+    height: 100%;
+    background: rgb(206, 206, 206);
+    overflow: scroll;
+}
+.full-post-head{
+    width: 100%;
+    height: 10dvh;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.full-post-head img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.full-post-head span{
+    margin-left: 1%;
+    font-size: 20px;
+}
+.full-post-caption{
+    width: 100%;
+    min-height: 40dvh;
+    border: black solid;
+}
+.full-post-image{
+    width: 100%;
+    height: fit-content;
+
+}
+.full-post-image img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+/* full post comments  */
+.full-post.comment-hide{
+    display: none;
+}
+.full-post-comment{
+    width: 100%;
+    height: fit-content;
+    /* border: blue solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.full-post-comment .comments{
+    margin:0.5rem 0px;
+    width: 95%;
+    height: fit-content;
+    background: rgb(155, 155, 155);
+    border-radius: 10px;
+}
+.full-post-comment .comments img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.full-post-comment .comments p{
+    margin-top: 0;
+    /* border: black solid; */
+    margin-left: 7%;
+    width: 80%;
+}
+
+.comment-user-head{
+    height: 10%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 2%;
+    /* border: red solid; */
+
 }
