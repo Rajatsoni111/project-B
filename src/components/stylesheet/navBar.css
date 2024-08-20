@@ -39,7 +39,7 @@
     padding: 0px 10px;
     /* background: transparent; */
 }
-input{
+.search_bar input{
     /* border: black solid; */
     border: none;
     outline: none;
