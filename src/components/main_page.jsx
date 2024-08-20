@@ -1,56 +1,25 @@
 import NavBar from "./navBar"
 import "./stylesheet/mainpage.css"
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
-import { FaRegComment, FaRegBookmark, FaBookmark, FaRegHeart } from "react-icons/fa";
-import { GoHeart } from "react-icons/go";
-
-import { FcLike } from "react-icons/fc";
-
-
+import { AiFillCloseCircle } from "react-icons/ai";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import LikeSaveComment  from "./like-comment-save";
+import  {CommetnLikeDislike} from "./like-comment-save";
+
 
 const MainPage = () => {
-    const display = { color: "black", scale: "1.5", transition: "0.5s" }
-    const blackDisplay = { color: "black", scale: "1.2", transition: "0.5s" }
 
-    let [likeStyle, setLikeStyle] = useState(false)
-    let [likeStyle2, setLikeStyle2] = useState(true)
-    let [saveStyle, setSaveStyle] = useState(false)
-    let [saveStyle2, setSaveStyle2] = useState(true)
-
-    const likeChangeIcon = () => {
-        if (likeStyle === false)
-            setLikeStyle(true)
-        setLikeStyle2(false)
-        setLikeCounter(likeCounter + 1)
-    }
-    const likeChangeIcon2 = () => {
-        if (likeStyle2 === false)
-            setLikeStyle2(true)
-        setLikeStyle(false)
-        setLikeCounter(likeCounter - 1)
-    }
-    const saveChangeIcon = () => {
-        if (saveStyle === false)
-            setSaveStyle(true)
-        setSaveStyle2(false)
-        setSaveCounter(saveCounter + 1)
-    }
-    const saveChangeIcon2 = () => {
-        if (saveStyle2 === false)
-            setSaveStyle2(true)
-        setSaveStyle(false)
-        setSaveCounter(saveCounter - 1)
-    }
-    let [saveCounter, setSaveCounter] = useState(0)
-    let [likeCounter, setLikeCounter] = useState(0)
     //full post function 
-    // let [commentClass , setCommentClass] = useState(".full-post-comment")
-    let fullPost = () => {
-        alert("full post is here")
+    let [fullPost, setFullPost] = useState(false)
+    const displayFullPost = () => {
+        setFullPost(true)
     }
+    const fullDisplayClose = () => {
+        setFullPost(false)
+    }
+
+    
+
     return (
         <>
             <div>
@@ -61,7 +30,7 @@ const MainPage = () => {
                 </div>
                 <NavBar></NavBar>
                 <div className="maindiv">
-                    {<Sidebar />}
+                    {<Sidebar className="mainSidebar" />}
                     {/* <div className="sidebar"></div> */}
                     <div className="postdiv" >
                         <div className="post">
@@ -81,28 +50,10 @@ const MainPage = () => {
                                         this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
                                     </p>
                                 </div>
-                                <div className="like-comment-save">
-                                    <div className="comment">
-                                        <FaRegComment style={blackDisplay} />
-                                        <span>{likeCounter}</span>
-                                    </div>
-                                    <div className="like">
-                                        <div className="icon">
-                                            {likeStyle2 ? <GoHeart className="likeIcon" onClick={likeChangeIcon} style={display} /> : null}
-                                            {likeStyle ? <FcLike className="colorLikeIcon" onClick={likeChangeIcon2} style={display} /> : null}
-                                        </div>
-                                        <span>{likeCounter}</span>
-                                    </div>
-                                    <div className="save">
-                                        {saveStyle2 ? <FaRegBookmark onClick={saveChangeIcon} style={blackDisplay} /> : null}
-                                        {saveStyle ? <FaBookmark onClick={saveChangeIcon2} style={blackDisplay} /> : null}
-                                        <span>{saveCounter}</span>
-                                    </div>
-
-                                </div>
+                                {<LikeSaveComment />}
 
                             </div>
-                            <div className="post-image" onClick={fullPost}>
+                            <div className="post-image" onClick={displayFullPost}>
                                 <img src="../background_image.jpg" alt="" />
                             </div>
                         </div>
@@ -123,22 +74,8 @@ const MainPage = () => {
                                         this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
                                     </p>
                                 </div>
-                                <div className="like-comment-save">
-                                    <div className="comment">
-                                        <FaRegComment />
-                                        <span>{ }</span>
-                                    </div>
-                                    <div className="like">
-                                        <FaRegHeart onClick={likeChangeIcon} style={likeStyle2} />
-                                        <FcLike onClick={likeChangeIcon2} style={likeStyle} />
-                                        <span>{likeCounter}</span>
-                                    </div>
-                                    <div className="save">
-                                        <FaRegBookmark />
-                                        <span>{saveCounter}</span>
-                                    </div>
+                                {<LikeSaveComment />}
 
-                                </div>
 
                             </div>
                             <div className="post-image">
@@ -162,22 +99,8 @@ const MainPage = () => {
                                         this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
                                     </p>
                                 </div>
-                                <div className="like-comment-save">
-                                    <div className="comment">
-                                        <FaRegComment />
-                                        <span>{ }</span>
-                                    </div>
-                                    <div className="like">
-                                        <FaRegHeart onClick={likeChangeIcon} style={likeStyle2} />
-                                        <FcLike onClick={likeChangeIcon2} style={likeStyle} />
-                                        <span>{likeCounter}</span>
-                                    </div>
-                                    <div className="save">
-                                        <FaRegBookmark />
-                                        <span>{saveCounter}</span>
-                                    </div>
+                                {<LikeSaveComment />}
 
-                                </div>
 
                             </div>
                             <div className="post-image">
@@ -185,50 +108,160 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="full-post-div" >
+                    {fullPost ? <div className="full-post-div" >
                         <div className="full-post">
                             <div className="full-post-head">
                                 <img src="../default-user-icon.jpg" alt="" />
                                 <span>username</span>
                             </div>
                             <div className="full-post-caption">
-                                    <h3>caption</h3>
+                                <h3>Just winging it through life, one feather at a time.<br />
+                                    Flapping my wings and embracing my flyness..<br />
+                                    Feathered and fabulous..<br />
+                                    Freedom never felt so good..<br />
+                                    Chirping my way through life..<br />
+                                    Birds of a feather flock together..<br />
+                                    Ready to spread some birdie love..<br />
+                                    Fly high, dream big</h3>
                             </div>
+                            {<LikeSaveComment />}
                             <div className="full-post-image">
                                 <img src="../ibird-mages.jpeg" alt="" />
                             </div>
+
                             <div className="full-post-comment">
-                                <div className="comments">
+                                <div className="user-comment">
                                     <div className="comment-user-head">
-                                    <img src="../default-user-icon.jpg" alt="" />
-                                    <h5>username</h5>
+                                        <img src="../default-user-icon.jpg" alt="" />
+                                        <div className="div-username-or-comment">
+                                            <h5>username</h5>
+                                            <input type="text" placeholder="Type something..." />
+                                        </div>
                                     </div>
-                                    <p>user comment is here</p>
+
                                 </div>
                                 <div className="comments">
                                     <div className="comment-user-head">
-                                    <img src="../default-user-icon.jpg" alt="" />
-                                    <h5>username</h5>
+                                        <img src="../default-user-icon.jpg" alt="" />
+                                        <div className="div-username-or-comment">
+                                            <h5>username</h5>
+                                            <p>this is a comment by my side or we can say it is just a comment to test the comment box this is a comment by my side or we can say it is just a comment to test the comment box this is a comment by my side or we can say it is just a comment to test the comment boxthis is a comment by my side or we can say it is just a comment to test the comment boxthis is a comment by my side or we can say it is just a comment to test the comment box </p>
+                                            {<CommetnLikeDislike/>}
+                                        </div>
                                     </div>
-                                    <p>user comment is here</p>
+                                    <div className="commentReplies">
+                                        <div className="replies">
+                                            <div className="user-replies">
+                                                <img src="../default-user-icon.jpg" alt="" />
+                                                <div className="replies-comment-div">
+                                                    <h5>username</h5>
+                                                    <input type="text" placeholder="Type something..." />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className="replies">
+                                            <div className="comment-user-head">
+                                                <img src="../default-user-icon.jpg" alt="" />
+                                                <div className="div-username-or-comment">
+                                                    <h5>username</h5>
+                                                    <p>this is a reply of this comment</p>
+                                                    {<CommetnLikeDislike/>}
+
+                                                </div>
+                                            </div>
+                                            <div className="user-replies-replies">
+                                                <img src="../default-user-icon.jpg" alt="" />
+                                                <div className="replies-comment-div">
+                                                    <h5>username</h5>
+                                                    <input type="text" placeholder="Type something..." />
+                                                </div>
+                                            </div>
+                                            <div className="replies-ka-replies">
+                                                <div className="comment-user-head">
+                                                    <img src="../default-user-icon.jpg" alt="" />
+                                                    <div className="div-username-or-comment">
+                                                        <h5>username</h5>
+                                                        <p>this is a reply of this reply</p>
+                                                        {<CommetnLikeDislike/>}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="replies-ka-replies">
+                                                <div className="comment-user-head">
+                                                    <img src="../default-user-icon.jpg" alt="" />
+                                                    <div className="div-username-or-comment">
+                                                        <h5>username</h5>
+                                                        <p>this is a reply of this reply</p>
+                                                        {<CommetnLikeDislike/>}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="replies">
+                                            <div className="comment-user-head">
+                                                <img src="../default-user-icon.jpg" alt="" />
+                                                <div className="div-username-or-comment">
+                                                    <h5>username</h5>
+                                                    <p>this is a reply of this comment</p>
+                                                    {<CommetnLikeDislike/>}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="replies">
+                                            <div className="comment-user-head">
+                                                <img src="../default-user-icon.jpg" alt="" />
+                                                <div className="div-username-or-comment">
+                                                    <h5>username</h5>
+                                                    <p>this is a reply of this comment</p>
+                                                    {<CommetnLikeDislike/>}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="comments">
                                     <div className="comment-user-head">
-                                    <img src="../default-user-icon.jpg" alt="" />
-                                    <h5>username</h5>
+                                        <img src="../default-user-icon.jpg" alt="" />
+                                        <div className="div-username-or-comment">
+                                            <h5>username</h5>
+                                            <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
+                                            {<CommetnLikeDislike/>}
+
+                                        </div>
                                     </div>
-                                    <p>user comment is here</p>
                                 </div>
                                 <div className="comments">
                                     <div className="comment-user-head">
-                                    <img src="../default-user-icon.jpg" alt="" />
-                                    <h5>username</h5>
+                                        <img src="../default-user-icon.jpg" alt="" />
+                                        <div className="div-username-or-comment">
+                                            <h5>username</h5>
+                                            <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
+                                            {<CommetnLikeDislike/>}
+
+                                        </div>
                                     </div>
-                                    <p>user comment is here</p>
+                                </div>
+                                <div className="comments">
+                                    <div className="comment-user-head">
+                                        <img src="../default-user-icon.jpg" alt="" />
+                                        <div className="div-username-or-comment">
+                                            <h5>username</h5>
+                                            <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
+                                            {<CommetnLikeDislike/>}
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div><AiFillCloseCircle onClick={fullDisplayClose} style={{ transform: "Scale(2)", margin: "30px" }} /></div>
+                    </div> : null}
+
                 </div>
             </div>
         </>

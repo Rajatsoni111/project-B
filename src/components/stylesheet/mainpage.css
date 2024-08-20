@@ -171,24 +171,7 @@ body{
     transform: scale(1.2);
     transition: 0.5s;
 }
-.like-comment-save{
-    padding-left: 10px;
-    margin-top: 5%;
-    display: flex;
-    gap: 30px;
-}
- .icon{
-    position: relative;
-}
 
-.comment, .like, .save{
-    /* margin-left: 10px; */
-    display: flex;
-    min-width: 30px;
-    max-width: fit-content;
-    align-items: center;
-    gap: 10px;
-}
 
 .full-post-div{
     width: 100%;
@@ -212,6 +195,7 @@ body{
     display: flex;
     align-items: center;
     padding-left: 20px;
+    border-bottom:2px solid ;
 }
 .full-post-head img{
     width:50px;
@@ -226,8 +210,10 @@ body{
 }
 .full-post-caption{
     width: 100%;
-    min-height: 40dvh;
-    border: black solid;
+    min-height: 20%;
+    max-height: fit-content;
+    padding:0px 20px ;
+    /* border: black solid; */
 }
 .full-post-image{
     width: 100%;
@@ -254,33 +240,136 @@ body{
     align-items: center;
     /* justify-content: center; */
 }
-.full-post-comment .comments{
+.user-comment{
+    margin: 0.5rem 0px;
+    width: 100%;
     margin:0.5rem 0px;
     width: 95%;
     height: fit-content;
     background: rgb(155, 155, 155);
     border-radius: 10px;
+
 }
-.full-post-comment .comments img{
+.user-comment input{
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid;
+    color: black;
+    width: 100%;
+}
+.user-comment input::placeholder{
+    color: black;
+}
+.user-comment img{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     aspect-ratio: 3/2;
     object-fit: contain;
 }
-.full-post-comment .comments p{
-    margin-top: 0;
-    /* border: black solid; */
-    margin-left: 7%;
-    width: 80%;
+ .comments{
+    margin:0.5rem 0px;
+    width: 95%;
+    height: fit-content;
+    background: rgb(155, 155, 155);
+    border-radius: 10px;
 }
-
+ .comments img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.div-username-or-comment h5 , .div-username-or-comment p{
+    /* border: black solid; */
+    margin: 0;
+}
 .comment-user-head{
+    margin: 10px 10px;
     height: 10%;
     display: flex;
     gap: 10px;
-    align-items: center;
-    padding-left: 2%;
+    align-items: start;
+    padding:1%;
     /* border: red solid; */
-
 }
+ .div-username-or-comment{
+    /* margin: 0; */
+    /* padding: 0; */
+    height: fit-content;
+    /* border: black solid; */
+    width: 100%;
+ }
+ .like-dislike-reply{
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+ }
+ .commentLike, .commentDislike, .commentReply{
+    display: flex;
+    gap: 5px;
+ }
+ .commentReplies{
+    /* background: rgb(192, 192, 192); */
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 10%;
+    width: 85%;
+ }
+ .replies{
+    background: rgb(178, 177, 177);
+    border-radius: 10px;
+    margin-top: 1%;
+    width: 100%;
+ }
+ .user-replies{
+    margin: 10px 10px;
+    height: 10%;
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    padding: 1%;
+ }
+ .replies-comment-div{
+    padding: 0;
+    height: fit-content;
+    /* border: black solid; */
+    width: 100%;
+ }
+ .replies-comment-div h5 , .replies-comment-div input{
+    margin: 0;
+ }
+ .replies-comment-div input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid ;
+    outline: none;
+    color: black;
+    width: 100%;
+ }
+
+ /* //replies ka replies */
+ .user-replies-replies{
+    margin: 0% 10%;
+    height: 10%;
+    width: 80%;
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    padding: 1%;
+    background: gray;
+ }
+ .replies-ka-replies{
+    margin:0% 5% 0% 10%;
+    background: gray;
+    border-radius: 10px;
+ }
+ @media  screen and (max-width:800px) {
+    .mainSidebar{
+        position: absolute;
+    }
+    
+ }
