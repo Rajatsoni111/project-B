@@ -6,16 +6,17 @@ import MainPage from './components/main_page';
 import Makepost from './components/makePost';
 import NavBar from './components/navBar';
 import ToggleButton from './components/toggleButton';
+import Makepost from './components/makePost';
 
 function App() {
   return (
     <>
     {/* <Profile/> */}
     {/* <Login/> */}
-    {<MainPage/>}
+    {/* {<MainPage/>} */}
     {/* {<Sidebar/>} */}
     {/* {<ToggleButton/>} */}
-    {/* {<Makepost/>}s */}
+    {/* {<Makepost/>} */}
     </>
   );
 }
