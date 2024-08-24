@@ -3,8 +3,15 @@ import "./stylesheet/mainpage.css"
 import { AiFillCloseCircle } from "react-icons/ai";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
-import LikeSaveComment  from "./like-comment-save";
-import  {CommetnLikeDislike} from "./like-comment-save";
+import LikeSaveComment from "./like-comment-save";
+import { CommetnLikeDislike } from "./like-comment-save";
+import { useEffect } from "react";
+
+import { IoHomeOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
+import { CiUser } from "react-icons/ci";
+
+
 
 
 const MainPage = () => {
@@ -17,7 +24,30 @@ const MainPage = () => {
     const fullDisplayClose = () => {
         setFullPost(false)
     }
-
+    // let post = localStorage.getItem("post")
+    
+    // const MyData = (props) => {
+        const [items, setItems] = useState([]);
+        useEffect(() => {
+            const value = localStorage.getItem('post')
+            setItems(JSON.parse(value))
+        }, [])
+        console.log(items)
+    // }s
+    // const value = () => {
+    //     let arr
+    //     useEffect = () => {
+    //         let post = localStorage.getItem("post")
+    //         if (post == null) {
+    //             arr = []
+    //         }
+    //         else {
+    //             arr = JSON.parse(post)
+    //         }
+    //     }
+    // }
+    
+        
     
 
     return (
@@ -33,7 +63,8 @@ const MainPage = () => {
                     {<Sidebar className="mainSidebar" />}
                     {/* <div className="sidebar"></div> */}
                     <div className="postdiv" >
-                        <div className="post">
+                        {items.map((item,i)=>(
+                            <div className="post">
                             <div className="post-function">
                                 <div className="post-function-head">
                                     <div className="user-id">
@@ -44,19 +75,21 @@ const MainPage = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="post-title">
+                                    <h5>{item.title}</h5>
+                                </div>
                                 <div className="post-function-caption">
-                                    <p>this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
-                                        this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
-                                        this is caption of this post like or comment or this is only a test caption so dont take it seriously kepp this in mind
-                                    </p>
+                                    <p>{item.caption}</p>
                                 </div>
                                 {<LikeSaveComment />}
-
+            
                             </div>
                             <div className="post-image" onClick={displayFullPost}>
-                                <img src="../background_image.jpg" alt="" />
+                                <img src={item.image} alt="" />
                             </div>
                         </div>
+                        ))}
+
                         <div className="post">
                             <div className="post-function">
                                 <div className="post-function-head">
@@ -81,6 +114,8 @@ const MainPage = () => {
                             <div className="post-image">
                                 <img src="../ibird-mages.jpeg" alt="" />
                             </div>
+                            {/* {<LikeSaveComment />} */}
+
                         </div>
                         <div className="post">
                             <div className="post-function">
@@ -146,7 +181,7 @@ const MainPage = () => {
                                         <div className="div-username-or-comment">
                                             <h5>username</h5>
                                             <p>this is a comment by my side or we can say it is just a comment to test the comment box this is a comment by my side or we can say it is just a comment to test the comment box this is a comment by my side or we can say it is just a comment to test the comment boxthis is a comment by my side or we can say it is just a comment to test the comment boxthis is a comment by my side or we can say it is just a comment to test the comment box </p>
-                                            {<CommetnLikeDislike/>}
+                                            {<CommetnLikeDislike />}
                                         </div>
                                     </div>
                                     <div className="commentReplies">
@@ -166,7 +201,7 @@ const MainPage = () => {
                                                 <div className="div-username-or-comment">
                                                     <h5>username</h5>
                                                     <p>this is a reply of this comment</p>
-                                                    {<CommetnLikeDislike/>}
+                                                    {<CommetnLikeDislike />}
 
                                                 </div>
                                             </div>
@@ -183,7 +218,7 @@ const MainPage = () => {
                                                     <div className="div-username-or-comment">
                                                         <h5>username</h5>
                                                         <p>this is a reply of this reply</p>
-                                                        {<CommetnLikeDislike/>}
+                                                        {<CommetnLikeDislike />}
 
                                                     </div>
                                                 </div>
@@ -194,7 +229,7 @@ const MainPage = () => {
                                                     <div className="div-username-or-comment">
                                                         <h5>username</h5>
                                                         <p>this is a reply of this reply</p>
-                                                        {<CommetnLikeDislike/>}
+                                                        {<CommetnLikeDislike />}
 
                                                     </div>
                                                 </div>
@@ -206,7 +241,7 @@ const MainPage = () => {
                                                 <div className="div-username-or-comment">
                                                     <h5>username</h5>
                                                     <p>this is a reply of this comment</p>
-                                                    {<CommetnLikeDislike/>}
+                                                    {<CommetnLikeDislike />}
 
                                                 </div>
                                             </div>
@@ -217,7 +252,7 @@ const MainPage = () => {
                                                 <div className="div-username-or-comment">
                                                     <h5>username</h5>
                                                     <p>this is a reply of this comment</p>
-                                                    {<CommetnLikeDislike/>}
+                                                    {<CommetnLikeDislike />}
 
                                                 </div>
                                             </div>
@@ -230,7 +265,7 @@ const MainPage = () => {
                                         <div className="div-username-or-comment">
                                             <h5>username</h5>
                                             <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
-                                            {<CommetnLikeDislike/>}
+                                            {<CommetnLikeDislike />}
 
                                         </div>
                                     </div>
@@ -241,7 +276,7 @@ const MainPage = () => {
                                         <div className="div-username-or-comment">
                                             <h5>username</h5>
                                             <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
-                                            {<CommetnLikeDislike/>}
+                                            {<CommetnLikeDislike />}
 
                                         </div>
                                     </div>
@@ -252,7 +287,7 @@ const MainPage = () => {
                                         <div className="div-username-or-comment">
                                             <h5>username</h5>
                                             <p>this is a comment by my side or we can say it is just a comment to test the comment box </p>
-                                            {<CommetnLikeDislike/>}
+                                            {<CommetnLikeDislike />}
 
                                         </div>
                                     </div>
@@ -261,8 +296,21 @@ const MainPage = () => {
                         </div>
                         <div><AiFillCloseCircle onClick={fullDisplayClose} style={{ transform: "Scale(2)", margin: "30px" }} /></div>
                     </div> : null}
-
                 </div>
+
+                <footer>
+                    <div className="footer-funtion">
+                        <div className="main-home">
+                        <IoHomeOutline/>
+                        </div>
+                        <div className="make-post">
+                        <FaPlus/>
+                        </div>
+                        <div className="profile">
+                        <CiUser/>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </>
     )
