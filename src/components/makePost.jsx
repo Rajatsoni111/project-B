@@ -13,7 +13,28 @@ const Makepost = () => {
         console.log(e.target.files)
         setUploadImage(URL.createObjectURL(e.target.files[0]))
     }
-    
+    const [title, setTitle] = useState()
+    const [caption, setCaption] = useState()
+    let arr
+    const handle = () =>{
+
+    let post = localStorage.getItem("post")
+    if (post == null) {
+        arr = []
+    }
+    else{
+        arr = JSON.parse(post)
+    }
+    let myObj = {
+        title:title,
+        caption: caption,
+        image:uploadImage
+    }
+    arr.push(myObj)
+    localStorage.setItem("post",JSON.stringify(arr))
+
+    }
+
     return (
         <>
             <div>
@@ -27,10 +48,11 @@ const Makepost = () => {
                     <Sidebar />
                     <div className="makePostDiv">
                         <div className="title">
-                            <textarea type="text" placeholder="add a title" />
+                            <textarea type="text" placeholder="add a title" onChange={(e)=>setTitle(e.target.value)}/>
                         </div>
                         <div className="caption">
-                            <textarea type="text" placeholder="add a caption" />
+                            <textarea type="text" placeholder="add a caption" onChange={(e)=>setCaption(e.target.value)}/>
+
                         </div>
                         <div className="image">
                             <img src={uploadImage} alt="" />
@@ -40,7 +62,7 @@ const Makepost = () => {
                         <div className="tags">
                             <input type="text" placeholder="add a tag"/>
                         </div>
-                        <div className="button"><button>upload</button></div>
+                        <div className="button"><button onClick={handle}>upload</button></div>
                     </div>
                 </div>
             </div>
