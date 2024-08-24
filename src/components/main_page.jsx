@@ -33,22 +33,6 @@ const MainPage = () => {
             setItems(JSON.parse(value))
         }, [])
         console.log(items)
-    // }s
-    // const value = () => {
-    //     let arr
-    //     useEffect = () => {
-    //         let post = localStorage.getItem("post")
-    //         if (post == null) {
-    //             arr = []
-    //         }
-    //         else {
-    //             arr = JSON.parse(post)
-    //         }
-    //     }
-    // }
-    
-        
-    
 
     return (
         <>

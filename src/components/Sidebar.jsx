@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import './stylesheet/sidebar.css'
 import { FiLogOut, FiHome, FiEdit3, FiUser } from "react-icons/fi";
 import ToggleButton from './toggleButton';
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 const Sidebar = () => {
-    const [dark, setdark] = useState(false);
+    let[dark ,setdark] = useState(false)
     return (
         <div className='sidebar' data-theme={dark ? "dark" : "light"}>
             <div className="profile-section">
@@ -21,6 +22,8 @@ const Sidebar = () => {
                     <span>Theme</span>
                 </div>
             </div>
+
+            
         </div>
     )
 }
