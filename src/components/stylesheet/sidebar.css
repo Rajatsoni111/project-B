@@ -22,7 +22,7 @@ body {
 }
 
 .sidebar {
-    width: 40%;
+    width: 20%;
     height: 100%;
     /* background-color: red; */
     /* background-color: #a1a0a0; */
@@ -64,12 +64,13 @@ body {
                 margin: 0 10px 0 0;
                 color: var(--third-color);
             }
-            span{
+            .sidebar-btns{
+                text-decoration: none;
                 color: var(--third-color);
             }
 
             #sidebar-icon:hover,
-            span:hover {
+            .sidebar-btns:hover {
                 cursor: pointer;
             }
         }

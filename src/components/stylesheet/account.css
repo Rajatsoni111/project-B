@@ -1,0 +1,88 @@
+.account-div{
+    width: 60%;
+    height: 90dvh;
+    background: rgba(217, 217, 217, 0.46);
+    /* border: black solid; */
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+.account-div-1{
+    width: 90%;
+    height: 100%;
+    /* border: black solid; */
+}
+.account-data{
+    margin-top: 5%;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    /* padding: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: blue solid; */
+    background-color: rgba(217, 217, 217, 0.46);
+}
+.account-data img{
+    width: 20dvh;
+    height: 20dvh;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    border-radius: 50%;
+}
+/* .account-data button{
+    background: rgb(0, 0, 0);
+    color: white;
+} */
+.account-data .username-caption{
+    margin: 0;
+    width: 50%;
+    height: 60%;
+    /* border: black solid; */
+    overflow: hidden;
+    
+}
+.username-caption .caption-user-account{
+    width: 100%;
+    height: 100%;
+    /* border: black solid; */
+    word-wrap: break-word;
+    overflow: scroll;
+}
+.username-caption h1 , .username-caption p{
+    margin: 0;
+}
+
+.post-draft-saved{
+    margin-top: 5%;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    gap: 40px;
+}
+.user-post{
+    width: 100%;
+    height: 90%;
+    background-color: rgba(217, 217, 217, 0.46);
+    /* border: black solid; */
+    overflow: scroll;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.user-post .userpost{
+    margin-bottom: 20px;
+    width: 30%;
+    height: 50%;
+    border: black solid;
+}
+@media screen and (max-width:700px){
+    .account-div{
+        width: 100%;
+    }
+}
