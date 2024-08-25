@@ -5,6 +5,7 @@ import "./stylesheet/makepost.css"
 import { FiUploadCloud } from "react-icons/fi";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import Footer from "./footer";
 
 
 const Makepost = () => {
@@ -90,6 +91,7 @@ const Makepost = () => {
                         <div className="button"><button onClick={handle}>upload</button></div>
                     </div>
                 </div>
+                <Footer/>
             </div>
         </>
     )

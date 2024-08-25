@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './stylesheet/sidebar.css'
 import { FiLogOut, FiHome, FiEdit3, FiUser } from "react-icons/fi";
 import ToggleButton from './toggleButton';
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-    let[dark ,setdark] = useState(false)
+    let [dark, setdark] = useState(false)
     return (
         <div className='sidebar' data-theme={dark ? "dark" : "light"}>
             <div className="profile-section">
@@ -13,17 +13,25 @@ const Sidebar = () => {
                 <span id='profile-uname'>rajeshsoni</span>
             </div>
             <div className="buttons">
-                <div className="sidebar-buttons"><FiHome id='sidebar-icon' /><span>Home</span></div>
-                <div className="sidebar-buttons"><FiEdit3 id='sidebar-icon' /><span>Make a Post</span></div>
-                <div className="sidebar-buttons"><FiUser id='sidebar-icon' /><span>Account</span></div>
-                <div className="sidebar-buttons"><FiLogOut id='sidebar-icon' /><span>Logout</span></div>
+                <div className="sidebar-buttons"><FiHome id='sidebar-icon' />
+                <NavLink to="/feed" className={"sidebar-btns"}>Home</NavLink>
+                </div>
+                <div className="sidebar-buttons"><FiEdit3 id='sidebar-icon' />
+                <NavLink to="/create" className={"sidebar-btns"}>Make a Post</NavLink>
+                </div>
+                <div className="sidebar-buttons"><FiUser id='sidebar-icon' />
+                <NavLink to="/account" className={"sidebar-btns"}>Account</NavLink>
+                </div>
+                <div className="sidebar-buttons"><FiLogOut id='sidebar-icon' />
+                <NavLink to="/logout" className={"sidebar-btns"}>Logout</NavLink>
+                </div>
                 <div className='sidebar-buttons' id='theme'>
-                <ToggleButton isChecked={dark} handleChange={()=>{setdark(!dark)}}/>
+                    <ToggleButton isChecked={dark} handleChange={() => { setdark(!dark) }} />
                     <span>Theme</span>
                 </div>
             </div>
 
-            
+
         </div>
     )
 }
