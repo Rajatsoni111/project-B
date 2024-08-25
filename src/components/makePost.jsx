@@ -72,7 +72,9 @@ const Makepost = () => {
                             <textarea type="text" placeholder="add a title" onChange={(e) => setTitle(e.target.value)} />
                         </div>
                         <div className="caption">
+
                             <textarea type="text" placeholder="add a caption" onChange={(e) => setCaption(e.target.value)} />
+
                         </div>
                         <div className="image">
                             <img src={uploadImage} alt="" />

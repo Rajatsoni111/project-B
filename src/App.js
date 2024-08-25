@@ -22,9 +22,9 @@ function App() {
         <Route path='/setup-profile' Component={Profile} />
         <Route path='/*' Component={ErrorPage} />
         <Route path='/footer' Component={Footer} />
-
       </Routes>
     </BrowserRouter>
+
   );
 }
 
