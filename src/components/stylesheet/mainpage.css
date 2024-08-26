@@ -48,22 +48,7 @@ body{
     border-radius:50%;
     filter: blur(100px);
 }
-.small-cir2{
-    width: 50dvh;
-    height: 70dvh;
-    background: var(--small-circle2);
-    /* transform: translate(0%,-50%); */
-    border-radius:50%;
-    filter: blur(20px);
-}
-.small-cir3{
-    width: 50dvh;
-    height: 70dvh;
-    background: var(--small-circle3);
-    /* transform: translate(0%,-50%); */
-    border-radius:50%;
-    filter: blur(20px);
-}
+
 .maindiv{
     display: flex;
     justify-content: center;

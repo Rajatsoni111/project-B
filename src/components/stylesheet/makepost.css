@@ -57,6 +57,10 @@
     align-items: start;
     word-wrap: break-word;
 }
+.title textarea::placeholder, .caption textarea::placeholder{
+    color: black;
+}
+
 .image input{
     display: none;
 }
