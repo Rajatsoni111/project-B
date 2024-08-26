@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .mainhome, .makepostpluse, .mainprofile{
     scale: 2;
 }

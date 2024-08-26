@@ -1,3 +1,4 @@
+import Footer from "./footer"
 import NavBar from "./navBar"
 import Sidebar from "./Sidebar"
 import "./stylesheet/account.css"
@@ -37,25 +38,88 @@ const Account = () => {
                             </div>
                             <div className="user-post">
                                 <div className="userpost">
-                                    <div className="userpost-head"></div>
+                                    <div className="userpost-head">
+                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <span>username</span>
+                                    </div>
+                                    <div className="self-post-title">
+                                        <h4>this is a title</h4>
+                                    </div>
+                                    <div className="self-post-caption">
+                                        <p>this is a caption for the self post caption</p>
+                                    </div>
+                                    <div className="self-post-image">
+                                        <img src="./ibird-mages.jpeg" alt="" />
+                                    </div>
                                 </div>
                                 <div className="userpost">
+                                    <div className="userpost-head">
+                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <span>username</span>
+                                    </div>
+                                    <div className="self-post-title">
+                                        <h4>this is a title</h4>
+                                    </div>
+                                    <div className="self-post-caption">
+                                        <p>this is a caption for the self post caption</p>
+                                    </div>
+                                    <div className="self-post-image">
+                                        <img src="./ibird-mages.jpeg" alt="" />
+                                    </div>
                                 </div>
                                 <div className="userpost">
+                                    <div className="userpost-head">
+                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <span>username</span>
+                                    </div>
+                                    <div className="self-post-title">
+                                        <h4>this is a title</h4>
+                                    </div>
+                                    <div className="self-post-caption">
+                                        <p>this is a caption for the self post caption</p>
+                                    </div>
+                                    <div className="self-post-image">
+                                        <img src="./ibird-mages.jpeg" alt="" />
+                                    </div>
                                 </div>
                                 <div className="userpost">
+                                    <div className="userpost-head">
+                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <span>username</span>
+                                    </div>
+                                    <div className="self-post-title">
+                                        <h4>this is a title</h4>
+                                    </div>
+                                    <div className="self-post-caption">
+                                        <p>this is a caption for the self post caption</p>
+                                    </div>
+                                    <div className="self-post-image">
+                                        <img src="./ibird-mages.jpeg" alt="" />
+                                    </div>
                                 </div>
                                 <div className="userpost">
+                                    <div className="userpost-head">
+                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <span>username</span>
+                                    </div>
+                                    <div className="self-post-title">
+                                        <h4>this is a title</h4>
+                                    </div>
+                                    <div className="self-post-caption">
+                                        <p>this is a caption for the self post caption</p>
+                                    </div>
+                                    <div className="self-post-image">
+                                        <img src="./ibird-mages.jpeg" alt="" />
+                                    </div>
                                 </div>
-                                <div className="userpost">
-                                </div>
-                                <div className="userpost">
-                                </div>
+                               
 
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <Footer/>
             </div>
         </>
     )
