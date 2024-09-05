@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.mainhome, .makepostpluse, .mainprofile{
+.mainhome, .makepostpluse, .mainprofile, .search-user{
     scale: 2;
 }
 @media screen and (max-width:700px){

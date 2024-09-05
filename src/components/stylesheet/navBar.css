@@ -48,3 +48,8 @@
     color: black;
     border-radius: 10px;
 }
+@media screen and (max-width: 700px) {
+    .search_bar{
+display: none;
+    }
+}
