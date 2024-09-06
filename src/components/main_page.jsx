@@ -9,10 +9,6 @@ import { useEffect } from "react";
 import Footer from "./footer";
 
 
-
-
-
-
 const MainPage = () => {
 
     //full post function 
@@ -34,7 +30,7 @@ const MainPage = () => {
     console.log(items)
 
     return (
-        // <>
+        <>
         <div className="parent-div">
             <div className="background">
                 <div className="small-cir1"></div>
@@ -209,7 +205,7 @@ const MainPage = () => {
                 
             </div>
         </div>
-        // </>
+         </>
     )
 }
 export default MainPage

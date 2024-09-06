@@ -79,7 +79,7 @@
     aspect-ratio: 3/2;
     object-fit: contain;
 }
-button{
+.makePostDiv button{
     margin-top: 10%;
     font-size: 20px;
     border-radius: 20px;

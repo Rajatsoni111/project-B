@@ -54,7 +54,7 @@ const Account = () => {
                                 </div>
                                 <div className="userpost">
                                     <div className="userpost-head">
-                                        <img src="./default-user-icon.jpg" alt="" />
+                                        <img src="./background_image.jpg" alt="" />
                                         <span>username</span>
                                     </div>
                                     <div className="self-post-title">
@@ -64,7 +64,7 @@ const Account = () => {
                                         <p>this is a caption for the self post caption</p>
                                     </div>
                                     <div className="self-post-image">
-                                        <img src="./ibird-mages.jpeg" alt="" />
+                                        <img src="./background_image.jpg" alt="" />
                                     </div>
                                 </div>
                                 <div className="userpost">
