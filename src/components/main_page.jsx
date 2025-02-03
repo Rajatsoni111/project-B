@@ -8,11 +8,6 @@ import { CommetnLikeDislike } from "./like-comment-save";
 import { useEffect } from "react";
 import Footer from "./footer";
 
-
-
-
-
-
 const MainPage = () => {
 
     //full post function 
