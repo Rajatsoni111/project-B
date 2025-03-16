@@ -1,0 +1,20 @@
+.like-comment-save{
+    /* width: fit-content; */
+    padding-left: 20px;
+    margin-top: 2%;
+    display: flex;
+    gap: 30px;
+    /* border: black solid; */
+}
+ .icon{
+    position: relative;
+}
+
+.comment, .like, .save{
+    /* margin-left: 10px; */
+    display: flex;
+    min-width: 30px;
+    max-width: fit-content;
+    align-items: center;
+    gap: 10px;
+}

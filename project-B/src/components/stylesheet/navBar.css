@@ -1,0 +1,48 @@
+:root{
+--navbar-background-color:rgba(217, 217, 217, 0.46);
+--navbar--textcolor:black;
+--navbar-input-background-color:#FFFFFF;
+--navbar-icon-color:black;
+}
+[data-theme="dark"]{
+    --navbar-background-color:rgba(39, 38, 38, 0.46);
+    --navbar--textcolor:black;
+    --navbar-input-background-color:rgba(21, 19, 19, 1);
+    --navbar-icon-color:black;
+    }
+    
+
+
+.navbar{
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    background-color: gray;
+    align-items: center;
+    justify-content: space-between;
+    height: 10dvh;
+    background: var(--navbar-background-color);
+    backdrop-filter: blur(50px);
+}
+.logodiv{
+    margin-left: 10%;
+}
+.search_bar{
+    margin-right: 10%;
+    background-color: var(--navbar-input-background-color);
+    height: 50%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    /* background: transparent; */
+}
+.search_bar input{
+    /* border: black solid; */
+    border: none;
+    outline: none;
+    color: black;
+    border-radius: 10px;
+}
